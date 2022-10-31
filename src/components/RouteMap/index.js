@@ -4,7 +4,7 @@ import {View, Text, Map, Image,} from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker,} from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
 
-const GOOGLE_MAPS_APIKEY = 'AIzaSyDBXAPk7ScPL6VCtxcH-0rQKWStmEgId54'
+const GOOGLE_MAPS_APIKEY = 'AIzaSyBgzowpWQeT3t89DGpR3rdvCSNyykVW5IA'
 
 const RouteMap = () =>{
 

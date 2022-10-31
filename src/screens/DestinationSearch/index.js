@@ -16,22 +16,24 @@ const workPlace = {
 };
 
 const DestinationSearch = () => {
-  const [originPlace, setOriginPlace] = useState(null)
-  const [destinationPlace, setDestinationPlace] = useState(null)
+  const [originPlace, setOriginPlace] = useState(null);
+  const [destinationPlace, setDestinationPlace] = useState(null);
 
   const navigation = useNavigation()
 
   const checkNavigation = () =>{
-    console.warn('useEffect is called')
+    console.warn('check navigation is called')
     if(originPlace && destinationPlace){
+      setOriginPlace(true)
+      setDestinationPlace(true)
       console.warn('gap has been filled')
       navigation.navigate('SearchResults')
     }
   }
 
   useEffect(()=>{
-    checkNavigation()
-  },[originPlace,destinationPlace])
+      checkNavigation();   
+  },[originPlace, destinationPlace])
 
   return (
     <SafeAreaView>
@@ -53,7 +55,7 @@ const DestinationSearch = () => {
               }}
               fetchDetails
               query={{
-                key: 'AIzaSyDBXAPk7ScPL6VCtxcH-0rQKWStmEgId54',
+                key: 'AIzaSyBgzowpWQeT3t89DGpR3rdvCSNyykVW5IA',
                 language: 'en',
               }}
               renderRow={(data)=> <PlaceRow data={data}/>
@@ -78,7 +80,7 @@ const DestinationSearch = () => {
               }}
               fetchDetails
               query={{
-                key: 'AIzaSyDBXAPk7ScPL6VCtxcH-0rQKWStmEgId54',
+                key: 'AIzaSyBgzowpWQeT3t89DGpR3rdvCSNyykVW5IA',
                 language: 'en',
               }}
               renderRow={(data)=> <PlaceRow data={data}/>
