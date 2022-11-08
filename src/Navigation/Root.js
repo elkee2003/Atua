@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import HomeNavigator from './Home';
+import CustomDrawer from './CustomDrawer';
 
 const Drawer = createDrawerNavigator()
 
@@ -15,7 +16,11 @@ const DummyScreen = (props)=>{
 const RootNavigator = () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator >
+      <Drawer.Navigator 
+      defaultStatus='open'
+      drawerContent={(props)=>(<CustomDrawer {...props}/>)
+      }
+      >
         <Drawer.Screen name="Home" component={HomeNavigator} />
         <Drawer.Screen name='Your Packages'>
           {()=> <DummyScreen name={'Your Packages'}/>}
